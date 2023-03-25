@@ -1,1 +1,9 @@
 https://nextjs.org/learn/foundations/from-react-to-nextjs
+https://github.com/facebook/create-react-app/blob/main/.gitignore
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+https://levelup.gitconnected.com/how-to-render-react-app-using-express-server-in-node-js-a428ec4dfe2b
+
+
+
+
+
