@@ -1,3 +1,6 @@
+Template App Setup:
+https://github.com/Joao-Henrique/React_Express_App_Medium_Tutorial
+
 Cohere Documentation:
 https://docs.cohere.ai/reference/customer-support
 
