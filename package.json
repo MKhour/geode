@@ -1,0 +1,25 @@
+{
+  "name": "geode",
+  "version": "1.0.0",
+  "description": "Unlock your emotions and find the beauty within with Geode, your personalized mental health companion app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKhour/geode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MKhour/geode/issues"
+  },
+  "homepage": "https://github.com/MKhour/geode#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "password-generator": "^2.1.0"
+  }
+}
