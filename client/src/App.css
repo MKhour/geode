@@ -1,28 +1,31 @@
 .App {
   text-align: center;
+  font-family: "Courier New", monospace;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1 {
+  font-weight: normal;
+  font-size: 42px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.passwords {
+  list-style: none;
+  padding: 0;
+  font-size: 32px;
+  margin-bottom: 2em;
 }
 
-.App-title {
-  font-size: 1.5em;
+.more {
+  font-size: 32px;
+  font-family: "Courier New", monospace;
+  border: 2px solid #000;
+  background-color: #fff;
+  padding: 10px 25px;
 }
-
-.App-intro {
-  font-size: large;
+.more:hover {
+  background-color: #FDD836;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.more:active {
+  background-color: #FFEFA9;
 }
