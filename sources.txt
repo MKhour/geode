@@ -7,3 +7,13 @@ https://docs.cohere.ai/reference/customer-support
 
 ExpressJS:
 https://stackoverflow.com/questions/43464908/reactjs-connection-with-database
+
+Form submission:
+https://legacy.reactjs.org/docs/forms.html
+https://stackoverflow.com/questions/52915543/how-to-create-a-text-box-in-react
+https://stackoverflow.com/questions/52915543/how-to-create-a-text-box-in-react
+
+HooHacks React Workshop:
+https://github.com/siddtickle/react-workshop
+
+
