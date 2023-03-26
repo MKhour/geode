@@ -7,3 +7,8 @@ https://docs.cohere.ai/reference/customer-support
 
 ExpressJS:
 https://stackoverflow.com/questions/43464908/reactjs-connection-with-database
+
+Form submission:
+https://legacy.reactjs.org/docs/forms.html
+
+
