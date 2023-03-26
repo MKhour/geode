@@ -20,3 +20,6 @@ https://www.w3schools.com/react/react_forms.asp
 HooHacks React Workshop:
 https://github.com/siddtickle/react-workshop
 
+https://stackoverflow.com/questions/11761563/javascript-regexp-for-splitting-text-into-sentences-and-keeping-the-delimiter
+
+https://stackoverflow.com/questions/68206050/breaking-change-webpack-5-used-to-include-polyfills-for-node-js-core-modules
