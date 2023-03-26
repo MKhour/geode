@@ -6,11 +6,18 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {entry: '', value: "", finished: false};
+    this.state = {entry: '', value: "", finished: false,
+      inputs: "No one likes me", classifications: []
+    };
     // value has to stay, it clears the text area so that a character is only added once
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // Fetch passwords after first mount
+  componentDidMount() {
+    this.classifyText(this.state.inputs);
   }
 
   handleSubmit(event) {
@@ -23,7 +30,14 @@ class App extends Component {
     // updates entry value to include newly typed character
     this.setState({entry: this.state.entry + event.target.value});
     
-    
+  }
+
+  classifyText = (input) => {
+    console.log("INPUT ARG IN FRONTENT IS:" + input);
+    // Get the passwords and store them in state
+    fetch(`/api/classify-text?input=${input}`)
+      .then(res => res.json())
+      .then(classifications => this.setState({ classifications }));
   }
 
   render() {
@@ -68,14 +82,20 @@ class App extends Component {
                 <p>your entry: <br></br><br></br>
                 {this.state.entry}</p>
             </ul>
-            <ul className="passwords">
-              <p>your results: </p>
+            <p>your results: </p>
+            <ul className='passwords'>
+                {classifications.map((classif, index) =>
+                <li key={index}>
+                  {classif}
+                </li>
+                )}
             </ul>
 
             
 
           </div>
         )}
+
       </div>
     );
   }

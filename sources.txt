@@ -4,9 +4,12 @@ https://github.com/Joao-Henrique/React_Express_App_Medium_Tutorial
 
 Cohere Documentation:
 https://docs.cohere.ai/reference/customer-support
+https://github.com/cohere-ai/cohere-node
+https://github.com/cohere-ai/samples/tree/main/nlp-nextjs
 
 ExpressJS:
 https://stackoverflow.com/questions/43464908/reactjs-connection-with-database
+https://expressjs.com/en/guide/routing.html
 
 Form submission:
 https://legacy.reactjs.org/docs/forms.html
@@ -16,5 +19,4 @@ https://www.w3schools.com/react/react_forms.asp
 
 HooHacks React Workshop:
 https://github.com/siddtickle/react-workshop
-
 
