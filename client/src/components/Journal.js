@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header';
 
 
 class Journal extends Component {
@@ -31,7 +32,7 @@ class Journal extends Component {
 
     return (
       <div className="App">
-
+        <Header />
          {/* header */}
         <div>
           <h1>Geode Journaling</h1>
