@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+var Buffer = require('buffer/').Buffer
 
 const cohere = require("cohere-ai");
 cohere.init("9d5L8VPsV4SepwOYwBCLWzAMawvGos0LxmsCI4QM");
@@ -17,7 +18,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {entry: '', value: "", finished: false, inputs: [], classifications: []};
+    this.state = {entry: '', value: "", finished: false, classifications: []};
     // value has to stay, it clears the text area so that a character is only added once
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,8 +32,13 @@ class App extends Component {
 
   handleSubmit(event) {
     console.log(this.state.entry);
-    this.setState({finished: true, inputs: this.state.entry.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g)}); 
-    // console.log(this.state.entry.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g));
+    this.setState({finished: true}); 
+    // console.log(Array.from(this.state.entry.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g)));
+    /*var clas = this.classifyExamples(Array.from(this.state.entry.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g))).then(
+      function(value) {classifications => this.setState({ classifications });},
+      function(error) {console.log(error);}
+    )*/
+
     this.classifyTextAPI(this.state.entry.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g));
     event.preventDefault();
   }
@@ -43,32 +49,43 @@ class App extends Component {
     
   }
 
-  classifyTextAPI = (input) => {
-    console.log("INPUT ARG IN FRONTENT IS:" + input);
-    // Get the passwords and store them in state
-    fetch('/api/classify-text?' + new URLSearchParams({
-      input: input,
-    }))
+  
+  classifyTextAPI = (inputs) => {
+    console.log("type of inputs is: " + typeof(inputs));
+    var querystring = "";
+    for(let i = 0; i < inputs.length; i++) {
+      if(i == 0) {
+        querystring += "\?input=\"" + inputs[i]+"\"";
+      }
+      else {
+        querystring += "\&input=\"" + inputs[i]+"\"";
+      }
+    }
+    querystring = encodeURI('/api/classify-text' + querystring);
+    console.log("INPUT URL IN FRONTEND IS: " + querystring);
+    fetch(querystring)
       .then(res => res.json())
       .then(classifications => this.setState({ classifications }));
-  }
+  } 
 
   /*
   async classifyExamples(input) {
+
+    console.log("IN CLASSIFY EXAMPLES");
 
     const response = await cohere.classify({
       inputs: input,
       examples: examples,
     })
   
-    const classifications = response.body.classifications
-    const predictions = classifications.map(classification => classification.prediction)
+    const classifs = response.body.classifications
+    const predictions = classifs.map(classification => classification.prediction)
     console.log("reponse from classify examples is: " + predictions)
     console.log("type in cohere api call is: " + typeof(predictions))
   
     return predictions
-  }
-*/
+  } */
+
   render() {
     const { finished } = this.state;
     const {classifications} = this.state;
@@ -114,7 +131,7 @@ class App extends Component {
             </ul>
             <p>your results: </p>
             <ul className='passwords'>
-                {classifications.map((classif, index) =>
+              {classifications.map((classif, index) =>
                 <li key={index}>
                   {classif}
                 </li>

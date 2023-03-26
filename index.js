@@ -17,6 +17,7 @@ const examples = [
   ({text: "I'm bad at what I do", label: "Low self esteem"}),
 ]
 
+
 async function classifyExamples(input) {
 
   const response = await cohere.classify({
@@ -34,13 +35,13 @@ async function classifyExamples(input) {
 
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/classify-text/:text', async (req, res) => {
+app.get('/api/classify-text/', async (req, res) => {
   try {
-    console.log("the input text is " + req.params.text);
+    console.log("the input text is " + req.query.input);
   
-    const responses = await classifyExamples(inputs);
+    const responses = await classifyExamples(req.query.input);
 
   // console.log(`Sending response of ` + responses);
     // Return them as json
@@ -55,9 +56,10 @@ app.get('/api/classify-text/:text', async (req, res) => {
 });
 
 // The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
+// match one above
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  console.log("the request format doesn't match what we want");
+  // res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
