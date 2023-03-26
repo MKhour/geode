@@ -32,15 +32,15 @@ class Journal extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <h1>journaling</h1>
          {/* header */}
         <div>
-          <h1>Geode Journaling</h1>
+          
           <ul>
             <li>Made for HooHacks 2023</li>
             <li>Madelyn K., Catherine X., Megan K.</li>
           </ul>
-          <h2>Write a journal entry below:</h2><br></br>
+          <h2>Write your journal entry below:</h2><br></br>
         </div>
 
         { !finished ? (
@@ -76,7 +76,9 @@ class Journal extends Component {
             
 
           </div>
+          
         )}
+        <Header />
       </div>
     );
   }
