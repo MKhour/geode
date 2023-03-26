@@ -5,17 +5,6 @@ import Header from './Header';
 
 var Buffer = require('buffer/').Buffer
 
-const cohere = require("cohere-ai");
-cohere.init("9d5L8VPsV4SepwOYwBCLWzAMawvGos0LxmsCI4QM");
-const examples = [
-  ({text: "If I don't get an internship, I'll never get a job", label: "Catastrophizing"}),
-  ({text: "I'll never be able to find love", label: "Catastrophizing"}),
-  ({text: "What if I fail my class?", label: "Anxiety"}),
-  ({text: "I can't stop thinking that I might have cancer or another serious disease", label: "Anxiety"}),
-  ({text: "I'm inherently unlikable", label: "Low self esteem"}),
-  ({text: "I'm bad at what I do", label: "Low self esteem"}),
-]
-
 
 class Journal extends Component {
 
