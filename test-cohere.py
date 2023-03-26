@@ -4,8 +4,8 @@ from cohere.responses.classify import Example
 api_key = "9d5L8VPsV4SepwOYwBCLWzAMawvGos0LxmsCI4QM"
 co = cohere.Client(api_key)
 
-inputs = ["I want to change my password",
-          "Does my policy cover prescription medication?"
+inputs = ["No one likes me",
+          "I won't be able to achieve my goals"
           ]
 
 examples = [
