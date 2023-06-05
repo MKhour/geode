@@ -27,3 +27,6 @@ https://www.w3schools.com/react/react_router.asp
 https://stackoverflow.com/questions/11761563/javascript-regexp-for-splitting-text-into-sentences-and-keeping-the-delimiter
 
 https://stackoverflow.com/questions/68206050/breaking-change-webpack-5-used-to-include-polyfills-for-node-js-core-modules
+
+Buttons:
+https://react.school/ui/button
